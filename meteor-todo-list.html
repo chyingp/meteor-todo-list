@@ -1,0 +1,32 @@
+<head>
+	<title>程序猿小卡的meteor demo</title>
+	<style type="text/css">
+	.js-finished .js-text{text-decoration: line-through;}
+	</style>	
+</head>
+
+<body>
+
+	{{>create}}
+
+	<div class="todo-items">
+		{{#each tasks}}
+			{{>task}}
+		{{/each}}
+	</div>
+</body>
+
+<template name="create">
+	<div class="">
+		<input type="text" placehodler="输入todo项" class="js-text" />
+		<button class="js-add">创建</button>
+	</div>
+</template>
+
+<template name="task">
+	<div class="todo-item {{#if checked}}js-finished{{/if}}">
+		<input type="checkbox" checked="{{checked}}" class="js-check" />
+		<span class="js-text">{{text}} created at {{createdAt}}</span>
+		<button class="js-del">删除</button>		
+	</div>	
+</template>
