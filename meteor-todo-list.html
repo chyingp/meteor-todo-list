@@ -14,6 +14,8 @@
 			{{>task}}
 		{{/each}}
 	</div>
+
+
 </body>
 
 <template name="create">
@@ -26,7 +28,7 @@
 <template name="task">
 	<div class="todo-item {{#if checked}}js-finished{{/if}}">
 		<input type="checkbox" checked="{{checked}}" class="js-check" />
-		<span class="js-text">{{text}} created at {{createdAt}}</span>
+		<span class="js-text">{{text}}</span>
 		<button class="js-del">删除</button>		
 	</div>	
 </template>
